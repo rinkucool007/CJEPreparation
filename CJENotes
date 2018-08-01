@@ -1,0 +1,733 @@
+CERTIFIED JENKINS ENGINEER (CJE) – 2017 OBJECTIVE SAMPLE
+
+1) You are tasked by management to explain Continuous Deployment. Your explanation will be used in the company’s annual report so you need to ensure you understand it properly. Which is the best definition
+A software development practice where contributors are integrating their work very frequently to production in an automated fashion.
+
+Explanation
+Continuous Deployment is and extension of Continuous Integration and Continuous Delivery. It means that changes are deployed automatically to production after passing the automated continuous integration process.
+
+2) You have now been given charge over an existing Jenkins system install that was previously started by a colleague who is gone on a business trip. He left it in the install wizard phase. Unfortunately, your colleague did not not note the initialAdminPassword. Where on the system would this be located?
+/var/lib/jenkins/secrets/InitialAdminPassword
+
+Explanation
+You’ll find the initialAdminPassword that is asked for during the install wizard at this path.
+
+3) What type of views can be configured in Jenkins?
+All of the others
+
+Explanation
+All of these are view options.
+
+4) What does the Build Queue contain?
+Builds waiting for an executor
+
+Explanation
+The status of executors show in the Build Queue.
+
+5) What’s not true about Build History?
+Super Stable shows as gold
+
+Explanation
+There is no concept of “gold” or Super Stable in Jenkins.
+
+6) Which is a valid agent declaration?
+All of these
+
+Explanation
+These are all valid invocations of agents in a Jenkinsfile.
+
+7) You have a friend who wants fame and fortune from being a developer working with Jenkins. He wants to write code for it and doesn’t know anything about it yet. He wants to know what language Jenkins is written in. You of course, know the answer and are delighted to tell them. Which is it? Which of the following do you tell them it’s written in?
+Java
+
+Explanation
+Jenkins core is written in Java.
+
+8) What’s the difference between Pushing and Pulling code from a CI perspective?
+When the source informs the build system of a code change, that’s pushing. When the build system asks if there are changes to the source code, that’s pulling.
+
+Explanation
+Pushing is generally preferred as it assures the action is only performed as changes are made.
+
+9) You are interested in integrating CI/CD in your work environment, but your team lead & several of your team members do not understand the concept. Your boss believes that Continuous Delivery will mean that someone (namely, you) will need to be on-call around the clock for constant monitoring and deployment of new code. You have a 2-minute window to quickly explain what Continuous Delivery means. Out of the following answers, what is the clearest, and most succinct correct answer?
+Continuous Delivery is a software development discipline where software is built so that it can be released to production at any time, while continuous deployment means it is released into production continuously. CI/CD is meant to shorten the amount of time needed for QA while empowering developers to keep code as up-to-date as possible.
+
+Explanation
+Continuous Delivery means software is integrated continuously and is ready to be released at any time.
+
+10) What best describes DevOps?
+An organizational culture where developers and operations are working in harmony
+
+Explanation
+DevOps is a cultural movement that helps facilitate Continuous Integration concepts by bring Dev and Ops into harmony, where they may have been separate perviously.
+
+11) Jenkins, along with several other automation platforms, provides developers & operators with tools that allow them to automate the deployment of environments with preconfigured source code, including the CI Pipeline. What is this called?
+Infrastructure as Code
+
+Explanation
+“Infrastructure as code” means some or all of the state of your infrastructure is defined in source code. This is achieved through configuration management tools, like Puppet and Chef. The Continuous Integration component of infrastructure is defined in the Jenkinsfile, which lives amongst the project source code, illustrating infrastructure as code.
+
+12) Which is a common branching strategy?
+All are common
+
+Explanation
+These are all common branching strategies.
+
+13) What is Jenkins Auditing?
+Tracking who did what on your Jenkins server
+
+Explanation
+Auditing is the practice of determining what a user has been doing in Jenkins.
+
+14) How can you install plugins?
+Both the CLI and the Plugin Manager
+
+Explanation
+There are multiple ways to install plugins with the CLI and the Plugin Manager being the most common.
+
+15) How do you use the Jenkins CLI?
+java -jar /var/lib/jenkins/jenkins-cli.jar -s http://:8080/
+
+16) How do you archive artifacts from a Jenkinsfile?
+archiveArtifacts
+
+Explanation
+archiveArtifacts can be used to set an archiving strategy for a project in a Jenkinsfile.
+
+17) Which is an invalid Matrix-based Security Realm?
+Drive
+
+Explanation
+The Drive security realm does not exist. All of the others do.
+
+18) What’s a benefit of incremental updates over a clean checkout?
+It’s faster.
+
+Explanation
+Instead of deleting and re-cloning a project repository into a workspace, you can save time by just pulling any changes. This can be problematic when files produced during the build may persist, and cause issues in future builds.
+
+19) What’s the difference between an Upstream Project and a Downstream Project?
+An Upstream Project triggers a Downstream Project.
+
+Explanation
+The relationship between the projects is what determines Downstream versus Upstream. The Upstream job triggers the downstream job, and vice versa.
+
+20) You are working on a project that will build a Docker image. When the job completes it needs to trigger a build to deploy a container to your development environment for integration testing. How would you go about triggering the second build?
+Both “Triggered by another project” and the “Parameterized Trigger Plugin”
+
+Explanation
+Both are options for triggering upstream and downstream projects.
+
+21) Which is a valid Environment variable string interpolation?
+Both “${VARIABLE}” and $VARIABLE
+
+Explanation
+These are both valid forms of interpolation.
+
+22) You’re setting up a folder config in Jenkins and you set a couple of items called “child item with worst health” and also recursive. A colleague turns to you, since you know the answers to the rest of his questions, and asks you, “how do I determine the health of the folder with those items set?” What’s your answer?
+Items in nested sub-folders are used to calculate the folders health.
+
+Explanation
+When a folder is configured to recursive, and “child item with worst health” is selected, the item in the recursive folder structure will be used to determine the folder’s health.
+
+23) Your team is working on a new project to build a CI/CD pipeline for your Docker containers. You have discovered a new plugin to help with your image build. Where would you navigate to install this new plugin?
+Dashboard Left Panel -> Manage Jenkins -> Manage Plugins
+
+Explanation
+This is how you can reach the Plugin Manager from the dashboard.
+
+24) How do you add a new folder?
+Click “New Item” in the left dashboard panel, then select “Folder”.
+
+Explanation
+This is how you could add a new folder using the dashboard.
+
+25) You have a stage called “Promote to Green”, and you only want to run it when “development” is the current branch in a Multibranch Pipeline. How would you use the “when” declarative to accomplish this?
+when { branch ‘master’ }
+
+Explanation
+Example: stage(‘Promote to Green’) { agent { label ‘apache’ } when { branch ‘master’ } steps { sh “cp /var/www/html/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/rectangles/green/rectangle_${env.MAJOR_VERSION}.${devBuild}.jar” } }
+
+26) Your supervisor has asked you to explain to the company’s development team how using Jenkins will implement continuous integration. You want to make sure the developers understand what that means to them. Which of the following is the most succinct explanation?
+The software development team will increase the frequency at which code changes are committed to the build, test and deployment cycle.
+
+Explanation
+A central tenant of continuous integration is integrating work frequently.
+
+27) What types of Notification Integrations are there?
+All of these
+
+Explanation
+All of these notification integrations are available.
+
+28) Your company’s DevOps staff is new to the continuous integration methodology. Some users are unclear on best practices, and you’re hearing all kinds of feedback from them, some of it wrong. Which of the following statements is NOT a CI best practice?
+Build everything manually, because that prevents errors.
+
+Explanation
+CI relies heavily on automation, especially build automation, to enable the sped-up pace of code commits. If things are built manually, the pipeline is slowed down, and the ability to maintain a fast change pace is inhibited.
+
+29) You can set permissions for Anonymous users with Matrix-based Security.
+True
+
+Explanation
+Anonymous users can receive permissions in the Jenkins configuration.
+
+30) How do you set a freestyle project to be parameterized?
+From Project Configuration, select “This project is parameterized.”
+
+31) You’re a DevOps engineer in charge of your team’s Jenkins server. You have a particular stage in your pipeline that you want to run on a particular build node. You have to have Apache installed on this node. Assuming the node has been appropriately labeled, “apache”, how would you ensure this stage ran on that node?
+agent { label ‘apache’ }
+
+Explanation
+Example: stage(‘deploy’) { agent { label ‘apache’ } steps { sh “if ![ -d ‘/var/www/html/rectangles/all/${env.BRANCH_NAME}’ ]; then mkdir /var/www/html/rectangles/all/${env.BRANCH_NAME}; fi” sh “cp dist/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/${env.BRANCH_NAME}/” } }
+
+32) You want to archive and track a build artifact, “build/mybuilt.jar”, with a fingerprint from your team’s build. How would you invoke the archiveArtifacts function to accomplish this?
+archiveArtifacts artifacts: ‘build/mybuilt.jar’, fingerprint: true
+
+Explanation
+Example with Context: post { success { archiveArtifacts artifacts: ‘build/mybuilt.jar’, fingerprint: true } }
+
+33) How would you invoke a Docker agent?
+agent { docker ‘openjdk’}
+
+Explanation
+Docker-based agents can be invoked this way. You’d get the latest ‘openjdk’ docker image with this syntax.
+
+34) Where does the Jenkinsfile live?
+With your source code
+
+Explanation
+The Jenkinsfile typically lives in the root of your project SCM repository.
+
+35) What type of file extension do plugin files have?
+.hpi
+
+Explanation
+Jenkins plugins exist in .hpi files.
+
+36) You are working on a project that will build a Docker image. When the job completes it needs to trigger a build to deploy a container to your development environment for integration testing. How would you go about triggering the second build?
+Both “Triggered by another project” and the “Parameterized Trigger Plugin”
+
+Explanation
+Both are options for triggering upstream and downstream projects.
+
+37) What’s a fingerprint?
+An md5sum for an artifact that’s tracked between projects
+
+Explanation
+Fingerprints are an md5sum that is used to track artifacts.
+
+38) Where is the initialAdminPassword stored on the system?
+/var/lib/jenkins/secrets/
+
+Explanation
+The initialAdminPassword file, referenced in the install wizard, is stored in /var/lib/jenkins/secrets/.
+
+39) How do you configure a junit report in a Pipeline?
+junit “path to xml file”
+
+40) You’ve just become the administrator for the Jenkins server and the feedback you’ve received from the users is they’re having trouble locating their jobs to run them. You’ve determined that folders are the most logical solution and wish to move the jobs into the new folders you’ve created. How would you accomplish this?
+All of the above
+
+Explanation
+All of these options are ways to add projects to folders.
+
+41) Which of the following is not a default environment variable in a Jenkins project?
+START_TIME
+
+Explanation
+The other options are all default environment variables.
+
+42) How do you setup the GitHub Plugin Git hook from a Project Configuration Perspective?
+Set the “GitHub hook trigger for GITScm polling” trigger
+
+43) What programming language is Jenkins built in, and is required to be installed as a prerequisite to install?
+Java
+
+Explanation
+Jenkins is built with Java, which is required as a prerequisite to install.
+
+44) Your organization has been carefully and painstakingly performing builds on specific commits which the development team deems as releases or release candidates and subsequently only testing major releases. You have been placed in charge of a new project in which continuous integration is the primary goal. Which part of your organizations existing process do you need to modify in the furtherance of the goal of continuous integration?
+Building everything manually with great care.
+
+Explanation
+A good CI process should contain all the above except it should no longer contain a manual build process.
+
+45) What’s the SDLC?
+Software Development Life Cycle
+
+Explanation
+The SDLC is contained in CI/CD concepts.
+
+46) Which answer best describes Continuous Integration?
+A software development practice where contributors are integrating their work very frequently.
+
+Explanation
+Continuous Integration doesn’t mean that software can or will be released or pushed to production continuously.
+
+47) Which answer best describes Continuous Deployment?
+A software development discipline where software is released continuously as part of an automated pipeline.
+
+Explanation
+Continuous Deployment is an extension of Continuous Integration and Continuous Delivery. It’s important to know the difference. Deployment indicated that the code is continuous deployed to production.
+
+48) You want to deploy a Jenkins pipeline but you are concerned about the total amount of time it will take for the deployment to complete, and you aren’t concerned with files left in the working directory after a build. What should you do?
+Choose not to use a clean checkout.
+
+Explanation
+You can save time by not choosing to have a clean checkout for each build.
+
+49) What directive do you use fore a declarative pipeline?
+pipeline {..}
+
+Explanation
+Declarative pipelines use the “pipeline” directive.
+
+50) How do you configure notifications in a Jenkinsfile?
+emailext
+
+51) What’s an Integration Test?
+It tests components coming together.
+
+52) What’s a Unit Test?
+It tests a small piece of functionality, usually at the class method level.
+
+Explanation
+Unit testing is used to test very small units of functionality.
+
+53) What determines what can be seen in a “My View”?
+It shows all items a user has permission to view in Jenkins.
+
+Explanation
+“My View” shows items that the user has permission to view.
+
+54) How can you organize Jenkins Projects (or Jobs)?
+Folders and Views
+
+Explanation
+Projects can be organized in either Folders or Views.
+
+55) You’re at a job interview and the interviewer looks at you, trying to make you nervous. He looks down at his paper, looks up at you and asks, “How would you describe continuous integration?” You think to yourself. Which of the following answers is best?
+A software development practice where contributors are integrating their work very frequently.
+
+Explanation
+Continuous integration means contributors are integrating work frequently, but not necessarily releasing or promoting to production.
+
+56) In a JUnit report, if we set the “Health report amplification factor” to 2 and there’s a 1% failure, what’s the health score?
+98%
+
+Explanation
+You would take 100% then subtract (1%*2), thus 98%.
+
+57) What’s a benefit of clean checkout over an incremental update?
+It ensures the working directory is clean and not tampered with.
+
+Explanation
+A user, or previous build, could create or change a file in a workspace which could cause problems with future builds.
+
+58) Which is not a common stage of CI/CD?
+Kill
+
+Explanation
+Build, Deploy, and Test are all common stages of a CI/CD process.
+
+59) How can you assign Projects to specific agent nodes?
+Using an expression that matches a node’s name or label
+
+Explanation
+You can configure a project to run on a node, or subset of nodes, based on expression matching of a node’s labels.
+
+60) Which is not a function provided by the Jenkins CLI?
+db-dump
+
+Explanation
+The others are all common functions of the CLI.
+
+61) What’s Infrastructure as Code?
+Infrastructure is defined in source code, like the Jenkinsfile for a pipeline.
+
+Explanation
+This is also shown in config management tools, like Puppet and Chef. The Jenkinsfile represents a “pipeline as code” concept, specifically.
+
+62) Which plugin provides Git hook functionality
+Both the Git and GitHub Plugins
+
+Explanation
+Both of these very common plugins provide hook functionality.
+
+63) Which answer best describes Continuous Delivery?
+A software development discipline where software is built so that it can be released to production at any time.
+
+Explanation
+Continuous Delivery is an extension of Continuous Integration. It means that the software CAN be released at any time.
+
+64) What is an SCM?
+Source Code (or Control) Management
+
+Explanation
+The use of Source Code Management is a central tenant of Continuous Integration.
+
+65) You can set project-based security for users.
+True
+
+Explanation
+You can set security on a per-project basis.
+
+66) During a proposal, you need to quickly retrieve configuration for a demo of a project named “My Freestyle Project”, which is in the “Freestyles” folder, in a neat & easily-readable .xml format using a ReST API call. What is the correct syntax for the call?
+http://:8080/job/Freestyles/job/My%20Freestyle%20Project/config.xml
+
+Explanation
+You can retrieve a config.xml with all of the project configuration with a “GET” on that url. Two are incorrect because they don’t show the containing folder in the path.
+
+67) What’s the difference between Continuous Integration and Continuous Delivery?
+Continuous Integration is just the practice of integrating code continuously. It doesn’t necessarily mean that it can be released at any time like Continuous Delivery.
+
+Explanation
+Continuous Integration doesn’t mean that builds are available for release as Continuous Delivery implies.
+
+68) You can use Jenkins’ database to manage users.
+True
+
+Explanation
+This is the default mode for user management.
+
+69) What is Jenkins Matrix-based Security?
+Allows the administrator to grant very specific permissions to users and groups.
+
+Explanation
+Jenkins permissions are defined in a matrix-like structure, in which the administrator can set security based on a user or user group.
+
+70) What interval syntax could I use to trigger a build 30 minutes after every hour?
+30 * * * *
+
+71) What’s a Functional Test?
+It tests the functionality of the project as a whole .
+
+72) You’ve been promoted at work and are now in charge of the system administrators that look after the Jenkins platform for your company. You no longer want to get notifications from Jenkins, but your subordinates don’t know what settings to change in a Jenkinsfile. You give them a look, and say one of the following is what needs to be changed:
+emailext
+
+Explanation
+The emailext function can be used from a Jenkinsfile to configure notifications.
+
+73) How do you setup the Git Plugin Git hook from a Project Configuration Perspective?
+Set the “Poll scm” trigger, but you don’t have to specify an interval
+
+74) You are given the task to install Jenkins and its prerequisites as part of an initiative to implement CI/CD. After installing the operating system you will need to make sure what language is available for Jenkins to utilize before you can successfully install it?
+Java
+
+Explanation
+Jenkins requires Java be installed on the system.
+
+75) What interval syntax could I use to trigger a build every 15 minutes?
+H/15 * * * *
+
+76) Which is NOT a Continuous Integration best practice?
+Do everything manually with great care.
+
+Explanation
+Automation is a central tenant of Continuous Integration. Any manual process should be automated to the extent possible.
+
+77) If you set “Child item with worst health” and recursive in the Folder config, how is the health determined for the folder?
+Items in nested sub-folders are used to calculate the folder’s health.
+
+Explanation
+Nested items determine folder health in this configuration.
+
+78) You are a DevOps engineer in charge of your team’s Jenkins server. Your project is on major version “1”. You want to ensure that this variable, MAJOR_VERSION, is available through out the your Pipeline that is defined in a Jenkinsfile. Which of the following ways could you accomplish that using the “environment” directive?
+environment { MAJOR_VERSION = 1 }
+
+Explanation
+Example: pipeline { agent none environment { MAJOR_VERSION = 1 }
+
+79) How can you trigger a downstream build?
+Both “Triggered by another project” and the “Parameterized Trigger Plugin”
+
+Explanation
+Both of these options will work. “Triggered by another project” is configured by the downstream project, and the “Parameterized Trigger Plugin” is invoked from the upstream project. You’d only want to use one of these options.
+
+80) The QA department has been having issues locating their work on the Jenkins server. As a result their manager has asked for the jobs (projects) to be better organized. Which most correct answer can you use to organize projects?
+Folders and Views
+
+Explanation
+You can organize projects in Jenkins with Folders and Views.
+
+81) What do you need to configure an SSH agent?
+Correct
+
+Correct answer
+SSH keys, with the Master’s pub key set as an authorized key on the agent node
+
+Explanation
+You’ll need to configure key-based auth to utilize the SSH agent.
+
+82) How do you navigate to the Matrix-based Security section from Jenkins?
+Manage Jenkins -> Configure Global Security
+
+Explanation
+This is how you would use the dashboard to navigate to the Security section.
+
+83) How can you move Items to Folders?
+All of the others
+
+Explanation
+You can move a folder in all of these ways.
+
+84) Which is an invalid default project parameter?
+md5
+
+Explanation
+“md5” is not a common project parameter.
+
+85) Which step is NOT part of a traditional Continuous Integration workflow?
+Ask your manager for permission to commit code.
+
+Explanation
+Asking for permission is against the central tenant of Continuous Integration, “Automate Everything.”
+
+86) Which is an example of a Jenkins plugin?
+All of the others
+
+Explanation
+There are hundreds of Jenkins plugins available, and they can provide a multitude of functionality.
+
+87) What’s the Jenkinsfile?
+It contains the definition for a pipeline
+
+Explanation
+The Jenkinsfile lives with project source code and portrays the “Pipeline as code” concept.
+
+88) What is Ant?
+A Java build tool
+
+Explanation
+Ant is a lightweight build platform for Java projects.
+
+89) You have started work on a project with Docker integration. What is the proper syntax to invoke a Docker agent?
+agent {docker ‘openjdk’}
+
+Explanation
+“agent {docker ‘openjdk’}” is the correct syntax to invoke a docker agent with the ‘openjdk’ image. This syntax will provide the latest version.
+
+90) What types of credentials does Jenkins support?
+All of these
+
+Explanation
+Jenkins supports all of these credential types.
+
+91) Which isn’t a common Jenkins build tool?
+Excel
+
+Explanation
+Excel is not used to build things.
+
+92) Which is not a Git Plugin provided environment variable?
+GIT_ORIGIN_URL
+
+Explanation
+The others are all default Git Plugin provided Environment variables.
+
+93) Which is not an option in the Install Wizard?
+Add SSH Credentials
+
+Explanation
+By default, you are only prompted to add user/password credentials for the administrator user.
+
+94) What’s the difference between Continuous Delivery and Continuous Deployment?
+Continuous Delivery means the code CAN be released at any time, while Continuous Deployment means it is released continuously.
+
+Explanation
+Deployment means the promotion to production is automatic.
+
+95) Your co-worker was installing a jenkins instance and went home for the night. When they returned the next day they notice their machine had rebooted and the scroll back of the installation was unretrievable and they’ve come to you for help. In what location will you need to look at it to retrieve the initialAdminPassword?
+/var/lib/jenkins/secrets/
+
+Explanation
+You’ll find it in /var/lib/jenkins/secrets/.
+
+96) Your team is responsible for maintaining a Java base application. Over the last few months you’ve been adding unit test to ensure that the application is as solid as possible before going to QA. To ensure that everything is being tested properly you decided to add in code coverage. What is the commonly used Java Code Coverage Plugin?
+Cobertura
+
+Explanation
+Cobertura is the most common Java code coverage tool.
+
+97) What is the Plugin Manager?
+The UI to install and configure plugins in the Jenkins WebGUI
+
+Explanation
+The Plugin Manager can be used to add/remove/upgrade/downgrade plugins in Jenkins. These can be used to add functionality to Jenkins.
+
+98) You have taken over a build environment where Jenkins is responsible for scanning for changes made in a GIT repository every house and then apply that build to a few dozen web servers. As part of that job, Jenkins also is responsible for completing some scripted performance based tests and, depending on the defined results, marking the build as complete and notifying the team OR rolling back the build, notifying the team and marking it as failed. You notice that the build itself is now taking longer than an hour to complete, which is affecting the push of new changes on occasion. What changes could you make to your Jenkins environment to alleviate the amount of time it takes to complete and test a build so that the hourly schedule is more likely to be kept?
+
+Add one or more slave nodes to the environment, this will allow us to deploy code to multiple end points at one time. Break up the single job into multiple jobs so that each one can be triggered by the successful completion of the previous job in order to eliminate scheduling problems on beginning a new build in the event subsequent steps run longer than the intended time period.
+
+Explanation
+As the load of your Jenkins setup expands, you can distribute the burden by adding one or more slave nodes.
+
+99) What’s an Acceptance Test?
+It tests against the product specifications.
+
+100) What’s an example of a Cloud-based SCM?
+All of the others
+
+Explanation
+All of these options are cloud-based SCM providers.
+
+101) What can a Plugin do?
+All of the others
+
+Explanation
+Plugins can really be used to add any functionality to Jenkins.
+
+102) Where do you configure a shared global library?
+Configure System -> Global Pipeline Libraries
+
+Explanation
+You can establish inter-project functionality in a shared global library.
+
+103) You were down in the datacenter working on something else and received a phone call to make a change on the Jenkins server. As the rack does not have sufficient power or internet for you to plug in your laptop you decide to just use the console on the server itself. How would you access the CLI?
+java -jar /var/lib/jenkins/jenkins-cli.jar -s http://localhost:8080/
+
+Explanation
+You can utilize the jenkins cli for system administration with this command.
+
+104) What is a code coverage test?
+It tests how well your code is tested.
+
+105) What’s the difference between Authentication and Authorization?
+Authentication identifies a user, while Authorization dictates what a user is allowed to do.
+
+Explanation
+Authorization and Authentication are different, but related concepts. They don’t vary or indicate a level of strictness.
+
+106) Which menu option do you select to add a Pipeline or other Project?
+New Item
+
+Explanation
+Selecting “New Item” from the dashboard will take you to menu where you can add a new project.
+
+107) How can you downgrade a plugin?
+You can downgrade a plugin with any of these methods.
+
+108) How do you Navigate to the Plugin Manager?
+Dashboard Left Panel -> Manage Jenkins -> Manage Plugins
+
+Explanation
+This is the most common way to navigate to the Plugin Manager.
+
+109) What’s a big priority of Continuous Integration?
+
+Explanation
+When a build breaks, fixing it should be the priority of everyone on the project.
+
+110) What interval syntax could I use to trigger a build every day?
+All the others
+
+111) What’s the term for an item produced and retained from a build?
+artifact
+Explanation
+Artifacts are items produced by a build.
+
+ 
+
+112) What’s not true about a Build Executor?
+The default number of executors on a node is 4.
+
+Explanation
+The default number of executors on a node is 2.
+
+113) How do you configure the distribution of builds on each node?
+It happens largely automatically, although you can configure the number of executors on a node.
+
+Explanation
+Distribution of tasks will happen automatically, but could depend on the configuration of projects and project-based node assignment.
+
+114) How do you retrieve the config in an xml format for a project using the REST API?
+http://jenkins-server.com:8080/job/Freestyles/job/My%20Freestyle%20Project/config.xml
+
+Explanation
+You can view the config in xml format by hitting this endpoint.
+
+115) You’re a DevOps engineer in charge of configuring Jenkins for your team’s CI/CD Pipeline. You’re utilizing the Jenkins Pipeline and the Jenkinsfile. You want to define a stage for your build, that utilizes the locally installed Ant and build.xml in the root of your project repository. Which is the correct syntax?
+stage(‘build’) { steps { sh ‘ant -f build.xml -v’ } }
+
+Explanation
+The steps declarative must exist inside the corresponding stage. stage(‘build’) { steps { sh ‘ant -f build.xml -v’ } }
+
+116) Over the last 6 months a large number of projects have been added to Jenkins. You have been asked by your manager to do some cleanup by creating some list views. How would you go about creating these list views?
+All of the others
+
+Explanation
+You can add projects to list views with all of these options.
+
+117) What’s an example of SCM software?
+Both Git and Subversion
+
+Explanation
+Git and Subversion are common SCM software choices.
+
+118) You have a series of tasks which require execution across different software components to prove the compatibility and functionality of your build and the components as a whole. Which of the following describes the type of testing you will perform?
+Integration Testing
+Explanation
+Testing the integrated functions of multiple components is integration testing.
+
+119) Your team installed an update to one of your plugins. Suddenly several of your builds start to fail. After a few minutes of troubleshooting you discover that the issue was caused by upgrading the plugin. What would you do to downgrade the plugin?
+All of these
+
+Explanation
+All of these options can be used to downgrade a plugin.
+
+120) In a JUnit report, if we set the “Health report amplification factor” to 3 and there’s a 10% failure, what’s the health score?
+70%
+Explanation
+You would take 100% then subtract (10%*3), thus 70%.
+
+121) What’s the commonly used Java Code Coverage Plugin?
+Cobertura
+
+122) You need to grant permissions, via matrix-based security, to run a specific command in a Jenkins pipeline. The project parameters will not allow you to create a specific user to run this task, and you have no relevant groups. Which of the following is an option?
+Set permissions in Jenkins to allow anonymous users to run the command
+
+Explanation
+You can set permissions for anonymous users with matrix-based security. Since this requires the least impact on existing workflows, it’s the best solution.
+
+123) You are in charge of a new development process and find that the current branching strategies may have room for improvement. Which types of common strategies might you recommend?
+Developer Branching and Feature Branching and Release Branching are common branching strategies.
+
+Explanation
+All of these (Developer, Feature and Release) are common branching strategies.
+
+124) What type of Agent Nodes are there?
+All of the others
+
+Explanation
+All of these are common types of agents.
+
+125) What’s the Jenkins Hook URL for the Git Plugin?
+http://your-jenkins-server:8080/
+
+126) When would you use distributed builds?
+When you want to preserve resources on the master node
+
+Explanation
+You can distribute the resource load produced by your builds by adding one or more Jenkins slaves.
+
+127) What’s a Jenkins Job (or Project)?
+Can be scoped to any typical IT task, defined in Jenkins
+
+Explanation
+A project is really any unit of work in a typical IT environment that’s configured to run in Jenkins.
+
+128) Which pipeline syntax runs a shell command?
+sh
+
+Explanation
+“sh” can be used to run the specified shell command. It’s one of the most common Pipeline functions.
+
+129) How can you filter List Views?
+All of the others
+
+Explanation
+All of these are options for filtering items for views.
+
+130) What’s the Jenkins Hook URL for the GitHub Plugin?
+http://your-jenkins-server:8080/github-webhook/
+
