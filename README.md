@@ -7,3 +7,9 @@ https://linuxacademy.com/devops/training/course/name/certified-jenkins-engineer-
 
 
 https://www.devopslibrary.com
+
+
+
+http://download.dumpsfine.com/CJE.pdf
+
+
